@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palmistry AI Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/hand-pose-detection"></script>
+</head>
+<body>
+    <header>
+        <h1>Mystic Palm Reader</h1>
+        <p>Upload a clear image of your palm to reveal your destiny.</p>
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <input type="file" id="imageUpload" accept="image/*">
+            <label for="imageUpload" class="upload-btn">Capture or Upload Hand</label>
+        </div>
+
+        <div class="canvas-container" id="canvasContainer" style="display: none;">
+            <canvas id="handCanvas"></canvas>
+            <div id="scanner" class="scanner"></div>
+        </div>
+
+        <div id="loading" style="display: none;">Loading AI Model...</div>
+        
+        <div id="predictionResult" class="result-card" style="display: none;">
+            <h3>Your Reading</h3>
+            <p id="predictionText"></p>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
